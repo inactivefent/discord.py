@@ -311,6 +311,8 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
         The short help text for the command.
     usage: Optional[:class:`str`]
         A replacement for arguments in the default help text.
+    example: Optional[:class:`str`]
+        An example of the command arguments being used.
     aliases: Union[List[:class:`str`], Tuple[:class:`str`]]
         The list of aliases the command can be invoked under.
     enabled: :class:`bool`
@@ -416,6 +418,7 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
 
         self.brief: Optional[str] = kwargs.get('brief')
         self.usage: Optional[str] = kwargs.get('usage')
+        self.example: Optional[str] = kwargs.get('example')
         self.rest_is_raw: bool = kwargs.get('rest_is_raw', False)
         self.aliases: Union[List[str], Tuple[str]] = kwargs.get('aliases', [])
         self.extras: Dict[Any, Any] = kwargs.get('extras', {})
